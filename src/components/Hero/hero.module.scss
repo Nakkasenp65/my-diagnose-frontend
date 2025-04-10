@@ -1,0 +1,52 @@
+@import "/src/util/variables";
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  color: $text-color;
+
+  .header {
+    font-size: 108px;
+    line-height: 100px;
+    font-family: sans-serif;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .welcome {
+    width: 40rem;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .buttonGroup {
+    display: flex;
+    padding: 16px;
+    gap: 32px;
+
+    .start {
+      padding: 16px 32px;
+      border-radius: 16px;
+      border: 2px solid #000;
+      color: #000;
+    }
+
+    .model {
+      padding: 16px 32px;
+      border-radius: 16px;
+      background: black;
+      color: white;
+    }
+  }
+
+  .doctor {
+    position: absolute;
+    z-index: -3;
+    bottom: 0;
+    right: 30px;
+  }
+}

@@ -1,0 +1,12 @@
+@import "../../util/variables";
+
+.link {
+  color: $text-color;
+
+  .container {
+    padding: 32px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 3px solid #000;
+  }
+}

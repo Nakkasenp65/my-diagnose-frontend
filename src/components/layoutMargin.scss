@@ -1,0 +1,40 @@
+// Adjust the margin of the page according to width or screen size
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 200vh;
+}
+
+@media only screen and (max-width: 2560px) {
+  .container {
+    max-width: 1920p;
+  }
+}
+
+@media only screen and (max-width: 1920px) {
+  .container {
+    max-width: 1366p;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .container {
+    max-width: 360px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .container {
+    max-width: 300px;
+  }
+}

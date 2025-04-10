@@ -1,0 +1,24 @@
+@import "../../util/variables";
+
+.categories {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 56px;
+  gap: 72px;
+  border-radius: 56px;
+
+  .header {
+    color: $text-color;
+    font-size: 72px;
+  }
+
+  .lists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+}
