@@ -1,0 +1,305 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;  
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  max-width: 100%;
+  height: auto;
+  overflow: auto;
+  margin: 0 auto;
+  background-image: url('/images/bg2.jpg'); // รูปอยู่ public folder
+  background-size: cover;        // ให้รูปเต็ม container
+  background-position: center;   // จัดให้อยู่ตรงกลาง
+  background-repeat: no-repeat;  // ไม่ต้อง repeat รูป
+}
+
+.formBox {
+  width: 100%;
+  max-width: 600px;
+}
+
+.progressBar {
+  background: #ddd;
+  border-radius: 8px;
+  height: 10px;
+  margin-bottom: 20px;
+}
+
+.progress {
+  background: #4caf50;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.questionBlock {
+  margin-bottom: 20px;
+}
+
+.questionText {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.choiceRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.choiceButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.unselected {
+  // background-color: #e0e0e0;
+  // color: #333;
+  all: unset;
+  background-color: #3fb35c; // หรือเปลี่ยนตามปุ่มแต่ละตัว
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0.5rem;
+  transition: all 250ms;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  user-select: none;
+  touch-action: manipulation;
+
+  &:hover,
+  &:focus {
+    background-color: lighten(#3fb35c, 10%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    background-color: darken(#3fb35c, 10%);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    transform: translateY(0);
+  }
+}
+
+.selected {
+  // background-color: #0fa552;
+  // color: white;
+  all: unset;
+  background-color: #3fb35c; // หรือเปลี่ยนตามปุ่มแต่ละตัว
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0.5rem;
+  transition: all 250ms;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  user-select: none;
+  touch-action: manipulation;
+
+  &:hover,
+  &:focus {
+    background-color: lighten(#3fb35c, 10%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    background-color: darken(#3fb35c, 10%);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    transform: translateY(0);
+  }
+}
+
+.dropdown {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.navButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+// .backButton {
+//   background-color: #2196f3;
+//   color: rgb(255, 255, 255);
+//   border: none;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: 0.2s;
+// }
+
+// .nextButton {
+//   background-color: #54a8ec;
+//   color: rgb(255, 255, 255);
+//   border: none;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: 0.2s;
+// }
+
+
+// .confirmButton{
+//   background-color: #3fb35c;
+//   color: rgb(255, 255, 255);
+//   border: none;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: 0.2s;
+// }
+
+.nextButton,
+.backButton,
+.doneButton {
+  all: unset;
+  background-color: #54a8ec; // หรือเปลี่ยนตามปุ่มแต่ละตัว
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1rem;
+  transition: all 250ms;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  user-select: none;
+  touch-action: manipulation;
+
+  &:hover,
+  &:focus {
+    background-color: lighten(#54a8ec, 10%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    background-color: darken(#54a8ec, 10%);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    transform: translateY(0);
+  }
+}
+
+.backButton {
+  background-color: #2196f3;
+
+  &:hover {
+    background-color: lighten(#2196f3, 10%);
+  }
+
+  &:active {
+    background-color: darken(#2196f3, 10%);
+  }
+}
+
+.confirmButton {
+  // background-color: #3fb35c;
+
+  // &:hover {
+  //   background-color: lighten(#3fb35c, 10%);
+  // }
+
+  // &:active {
+  //   background-color: darken(#3fb35c, 10%);
+  // }
+  all: unset;
+  background-color: #3fb35c; // หรือเปลี่ยนตามปุ่มแต่ละตัว
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1rem;
+  transition: all 250ms;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  user-select: none;
+  touch-action: manipulation;
+
+  &:hover,
+  &:focus {
+    background-color: lighten(#3fb35c, 10%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    background-color: darken(#3fb35c, 10%);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    transform: translateY(0);
+  }
+}
+
+.doneButton {
+  background-color: #4caf50;
+
+  &:hover {
+    background-color: lighten(#4caf50, 10%);
+  }
+
+  &:active {
+    background-color: darken(#4caf50, 10%);
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupBox {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.doneButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
