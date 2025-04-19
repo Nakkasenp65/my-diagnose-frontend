@@ -1,0 +1,43 @@
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  padding: 16px;
+  border: 3px solid #2c3e50;
+  border-radius: 16px;
+  background: #fff;
+
+  /* ให้มันยืดเต็ม container ตามต้องการ */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  font-size: 20px;
+  margin: 0;
+}
+
+.description {
+  font-size: 14px;
+  margin: 0;
+}
+
+.example {
+  font-size: 14px;
+  margin: 0;
+}
+
+.icon {
+  flex-shrink: 0;
+  font-size: 1.2em; /* ปรับขนาดลูกศรตามชอบ */
+  color: #2c3e50;
+}

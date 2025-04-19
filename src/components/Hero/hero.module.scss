@@ -1,4 +1,4 @@
-@import "/src/util/variables";
+@use "/src/util/clr";
 
 .hero {
   height: 100vh;
@@ -7,7 +7,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 24px;
-  color: $text-color;
+  color: clr.$text-color;
 
   .header {
     font-size: 108px;
@@ -27,18 +27,25 @@
     display: flex;
     padding: 16px;
     gap: 32px;
+    font-size: 24px;
 
     .start {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 16px 32px;
       border-radius: 16px;
-      border: 2px solid #000;
+      border: 6px solid clr.$text-color;
       color: #000;
     }
 
     .model {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 16px 32px;
       border-radius: 16px;
-      background: black;
+      background: clr.$text-color;
       color: white;
     }
   }

@@ -1,19 +1,16 @@
 import styles from "./categories.module.scss";
-import Box from "../Box/Box";
+import Category from "./Category";
+import { CATEGORIES } from "@/util/data/DISEASE_INFO";
 
 export default function Categories() {
   return (
     <section className={styles.categories}>
       <h2 className={styles.header}>ประเภทโรคที่พบเจอบ่อย</h2>
       <div className={styles.lists}>
-        <Box title={"โรคผิวหนัง"} description={"อาการอักเสบ หรือแพ้ตามผิว"} />
-        <Box
-          title={"โรคทางเดินหายใจ"}
-          description={"อาการหายใจไม่สะดวก หรือมีอาการไอ"}
-        />
-        <Box
-          title={"โรคหลอดเลือด"}
-          description={"อาการหายใจไม่สะดวก หรือมึน หมอง เป็นลม"}
+        <Category
+          cat_name={CATEGORIES[0].cat_name}
+          cat_description={CATEGORIES[0].cat_description}
+          cat_example={CATEGORIES[0].cat_example}
         />
       </div>
     </section>

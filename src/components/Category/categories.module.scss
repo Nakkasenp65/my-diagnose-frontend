@@ -1,4 +1,4 @@
-@import "../../util/variables";
+@use "/src/util/clr";
 
 .categories {
   background-color: #fafafa;
@@ -11,14 +11,13 @@
   border-radius: 56px;
 
   .header {
-    color: $text-color;
+    color: clr.$text-color;
     font-size: 72px;
   }
 
   .lists {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
+    flex-direction: column;
+    gap: 16px;
   }
 }

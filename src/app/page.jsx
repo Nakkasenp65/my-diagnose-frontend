@@ -8,11 +8,6 @@ import Categories from "@/components/Category/Categories";
 export default function Home() {
   return (
     <main className={styles.main}>
-      {/* <Image
-        src={bg}
-        alt="website-gradient-background"
-        className={styles.backgroundImage}
-      ></Image> */}
       <Hero />
       <Categories />
       <Team />

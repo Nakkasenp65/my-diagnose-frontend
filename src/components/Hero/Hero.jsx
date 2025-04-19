@@ -12,13 +12,18 @@ export default function Hero() {
       </p>
       <div className={styles.buttonGroup}>
         <a className={styles.start} href="/diagnose">
-          Start Now
+          เริ่มเลย
         </a>
         <a className={styles.model} href="/aboutModel">
-          About Model.
+          เกี่ยวกับโมเดล
         </a>
       </div>
-      <Image className={styles.doctor} src={doc} alt="doctor-illustrator" />
+      <Image
+        priority={true}
+        className={styles.doctor}
+        src={doc}
+        alt="doctor-illustrator"
+      />
     </section>
   );
 }

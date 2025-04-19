@@ -1,6 +1,7 @@
 import "./style.scss";
 import LayoutMargin from "@/components/LayoutMargin";
 import Navbar from "@/components/Navbar/Navbar";
+import CategoryContextProvider from "@/context/CategoryContextProvider";
 
 export const metadata = {
   title: "FastDiag",
@@ -11,8 +12,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <LayoutMargin>{children}</LayoutMargin>
+        <CategoryContextProvider>
+          <Navbar />
+          <LayoutMargin>{children}</LayoutMargin>
+        </CategoryContextProvider>
       </body>
     </html>
   );

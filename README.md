@@ -2,9 +2,7 @@
 
 ## Description
 
-**Fast Diagnosis (Frontend)** is a web application that implements an **AI Model** for fast and accurate diagnosis of medical symptoms. The frontend serves as the interface for users to input their symptoms and receive immediate feedback from the AI system.
-
-This project is designed to provide a **clean**, **responsive**, and **modern interface** for healthcare professionals and users looking to get **quick, initial diagnosis** based on symptoms.
+**Fast Diagnosis (Frontend)** is a web application that implements an **AI Model** for fast diagnosis of medical symptoms. The frontend serves as the interface for users to input their symptoms and receive immediate feedback from the AI system.
 
 ## Tech Stack
 
