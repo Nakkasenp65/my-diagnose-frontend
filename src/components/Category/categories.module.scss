@@ -1,7 +1,7 @@
 @use "/src/util/clr";
 
 .categories {
-  background-color: #fafafa;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,10 +9,12 @@
   padding: 56px;
   gap: 72px;
   border-radius: 56px;
+  max-height: 300px;
+  overflow-y: scroll;
 
   .header {
     color: clr.$text-color;
-    font-size: 72px;
+    font-size: 3.75rem;
   }
 
   .lists {

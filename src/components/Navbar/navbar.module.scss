@@ -1,7 +1,8 @@
 @use "/src/util/clr";
 
 .nav {
-  position: absolute;
+  position: sticky;
+  top: 0.625rem;
   width: 100%;
   height: 72px;
   display: flex;
@@ -32,6 +33,6 @@
   }
 
   .active {
-    border-bottom: 2px solid clr.$blue-button; // border เมื่อ active
+    @include clr.defaultCardStyle;
   }
 }

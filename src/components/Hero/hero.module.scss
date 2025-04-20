@@ -37,6 +37,7 @@
       border-radius: 16px;
       border: 6px solid clr.$text-color;
       color: #000;
+      @include clr.defaultCardStyle;
     }
 
     .model {
@@ -47,6 +48,7 @@
       border-radius: 16px;
       background: clr.$text-color;
       color: white;
+      @include clr.defaultCardStyle;
     }
   }
 

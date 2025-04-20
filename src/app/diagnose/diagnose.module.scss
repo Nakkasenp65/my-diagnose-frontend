@@ -1,3 +1,36 @@
+@use "/src/util/clr";
 .container {
-  margin: 200px auto;
+  margin-top: 100px;
+
+  .formHead {
+    display: flex;
+    gap: 16px;
+    padding: 32px 0;
+
+    .formBack {
+      @include clr.defaultCardStyle;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 24px;
+}
+
+@media only screen and (max-width: 960px) {
+  .categories {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 16px;
+  }
 }

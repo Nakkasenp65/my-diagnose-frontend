@@ -7,11 +7,13 @@ export default function Categories() {
     <section className={styles.categories}>
       <h2 className={styles.header}>ประเภทโรคที่พบเจอบ่อย</h2>
       <div className={styles.lists}>
-        <Category
-          cat_name={CATEGORIES[0].cat_name}
-          cat_description={CATEGORIES[0].cat_description}
-          cat_example={CATEGORIES[0].cat_example}
-        />
+        {CATEGORIES.map((category) => (
+          <Category
+            cat_name={category.cat_name}
+            cat_description={category.cat_description}
+            cat_example={category.cat_example}
+          />
+        ))}
       </div>
     </section>
   );
