@@ -18,12 +18,6 @@ export default function Hero() {
           เกี่ยวกับโมเดล
         </a>
       </div>
-      <Image
-        priority={true}
-        className={styles.doctor}
-        src={doc}
-        alt="doctor-illustrator"
-      />
     </section>
   );
 }

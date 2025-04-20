@@ -30,29 +30,3 @@ body {
 a {
   text-decoration: none;
 }
-
-/* Custom scrollbar styling */
-::-webkit-scrollbar {
-  width: 10px; /* Adjust the width of the scrollbar */
-  position: absolute;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: clr.$blue-button; /* Primary color (dark blue) */
-  transition: ease-in-out 0.5s;
-  border-bottom-left-radius: 16px;
-  border-top-left-radius: 16px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* Lighter background for the scrollbar track */
-}
-
-::-webkit-scrollbar-track:hover {
-  background: rgba(255, 255, 255, 0.6); /* Slightly darker track on hover */
-}

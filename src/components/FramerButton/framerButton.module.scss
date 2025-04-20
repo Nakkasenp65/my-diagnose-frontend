@@ -1,0 +1,20 @@
+@use "/src/util/clr";
+
+.btn {
+  background: #fff;
+  color: #2c3e50;
+  font-size: 16px;
+  padding: 12px 24px;
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  border: none;
+  user-select: none;
+  @include clr.defaultCardStyle;
+}
+
+.active {
+  /* เมื่อ active ก็ใช้ mixin อีกที เพื่อเน้นกรอบ+shadow */
+  @include clr.defaultCardStyle;
+  background: #c0e4f0;
+}

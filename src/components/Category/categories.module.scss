@@ -1,25 +1,18 @@
 @use "/src/util/clr";
-
+.header {
+  color: clr.$text-color;
+  font-size: 3.75rem;
+}
 .categories {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 56px;
-  gap: 72px;
-  border-radius: 56px;
-  max-height: 300px;
-  overflow-y: scroll;
-
-  .header {
-    color: clr.$text-color;
-    font-size: 3.75rem;
-  }
+  gap: 64px;
+  width: 100%;
 
   .lists {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 32px;
   }
 }

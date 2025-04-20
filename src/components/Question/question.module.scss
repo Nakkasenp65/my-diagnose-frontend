@@ -1,0 +1,22 @@
+@use "/src/util/clr";
+
+.questionBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  @include clr.defaultCardStyle;
+
+  .title {
+    font-size: 16px;
+    color: clr.$text-color;
+  }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}

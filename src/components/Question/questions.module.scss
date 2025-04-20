@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+  border: 1px solid blue;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: auto auto;
+}
