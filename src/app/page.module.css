@@ -1,0 +1,14 @@
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: -moz-max-content;
+  height: max-content;
+  gap: 200px;
+}/*# sourceMappingURL=page.module.css.map */

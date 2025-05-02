@@ -1,0 +1,9 @@
+.team {
+  margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  gap: 24px;
+}/*# sourceMappingURL=team.module.css.map */

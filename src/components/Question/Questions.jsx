@@ -6,7 +6,7 @@ import styles from "./questions.module.scss";
 export default function Questions() {
   return (
     <div className={styles.container}>
-      {RESPIRATORY_DISEASES.slice(0, 12).map((q, index) => {
+      {RESPIRATORY_DISEASES.slice(0, 6).map((q, index) => {
         return (
           <Question
             key={`question_${index}`}

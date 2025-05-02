@@ -2,12 +2,14 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import styles from "./category.module.scss";
-import { useCategoryContext } from "@/context/CategoryContextProvider";
 import { motion } from "framer-motion";
 
-export default function Category({ cat_name, cat_description, cat_example }) {
-  const [category, setCategory] = useCategoryContext();
-
+export default function Category({
+  cat_name,
+  cat_description,
+  cat_example,
+  setCategory,
+}) {
   function handleSetCategory() {
     setCategory(cat_name);
   }
