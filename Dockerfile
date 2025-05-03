@@ -10,6 +10,8 @@
   
   RUN npm run build
   
+  ARG NEXT_PUBLIC_BACKEND_URL
+  ENV NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL
   # ---- Run stage ----
   FROM node:18-alpine
   

@@ -1,5 +1,8 @@
 build:
   docker:
-    web: Dockerfile
+    web:
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL}
 run:
   web: npm start
