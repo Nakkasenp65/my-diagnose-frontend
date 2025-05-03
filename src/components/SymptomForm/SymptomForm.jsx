@@ -49,11 +49,13 @@ export default function SymptomForm({ setFormFilled, result, setResult }) {
     try {
       const query = selectedSymptoms.join(",");
       const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
-      const response = await fetch(`${BACKEND_URL}predict?symptoms=${query}`);
+      // const response = await fetch(`${BACKEND_URL}predict?symptoms=${query}`);
 
+      const response = await fetch(`/predict?symptoms=${query}`);
       if (!response.ok) {
         throw new Error("Failed to get prediction from server.");
       }
+      console.log("CALLED FROM FRONTEND");
 
       // Optional: simulate loading delay
       await new Promise((resolve) => setTimeout(resolve, 2000));
