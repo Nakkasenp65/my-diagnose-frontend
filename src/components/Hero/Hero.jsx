@@ -7,8 +7,8 @@ export default function Hero() {
     <section className={styles.hero}>
       <h1 className={styles.header}>AI SYMPTOM PREDICTION</h1>
       <p className={styles.welcome}>
-        Diagnose the symptom to predict the health result with tested naive
-        bayes model that has over 90% accuracy
+        Diagnose the symptom to predict the health result with trained and
+        tested naive bayes model
       </p>
       <div className={styles.buttonGroup}>
         <a className={styles.start} href="/diagnose">

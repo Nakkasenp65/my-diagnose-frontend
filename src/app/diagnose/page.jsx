@@ -6,10 +6,19 @@ import SymptomForm from "@/components/SymptomForm/SymptomForm";
 import AnimateIn from "@/components/AnimateIn";
 import FormHead from "@/components/SymptomForm/FormHead";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 export default function Diagnose() {
   const [category, setCategory] = useState("");
   const [formFilled, setFormFilled] = useState(false);
+  const [result, setResult] = useState(null);
+  /*
+  Testing result
+    confidence: 0.6096,
+    disease: "Common Cold",
+    symptoms_provided: ["cough", "headache", 'chills"'],
+    unknown_symptoms: ['chills"'],
+  */
 
   return (
     <AnimateIn>
@@ -23,17 +32,23 @@ export default function Diagnose() {
         />
         <div className={styles.categories}>
           {/* Testing one category: RESPIRATORY_DISEASES*/}
-          {category === "" && (
-            <Category
-              cat_name={CATEGORIES[3].cat_name}
-              cat_description={CATEGORIES[3].cat_description}
-              cat_example={CATEGORIES[3].cat_example}
-              setCategory={setCategory}
-            />
-          )}
+          <AnimatePresence>
+            {category === "" ? (
+              <Category
+                cat_name={CATEGORIES[3].cat_name}
+                cat_description={CATEGORIES[3].cat_description}
+                cat_example={CATEGORIES[3].cat_example}
+                setCategory={setCategory}
+              />
+            ) : (
+              <SymptomForm
+                setFormFilled={setFormFilled}
+                result={result}
+                setResult={setResult}
+              />
+            )}
+          </AnimatePresence>
         </div>
-        {/* Form part */}
-        {category !== "" && <SymptomForm setFormFilled={setFormFilled} />}
       </div>
     </AnimateIn>
   );

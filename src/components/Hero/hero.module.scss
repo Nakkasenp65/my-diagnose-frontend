@@ -1,7 +1,7 @@
 @use "/src/util/clr";
 
 .hero {
-  // height: 100vh;
+  height: 60vh;
   margin-top: 6.25rem;
   display: flex;
   align-items: center;
@@ -39,6 +39,7 @@
       border: 6px solid clr.$text-color;
       color: #000;
       @include clr.defaultCardStyle;
+      background: white;
     }
 
     .model {

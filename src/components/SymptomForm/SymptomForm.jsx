@@ -4,22 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./symptomForm.module.scss";
 import PageContent from "./PageContent";
 import FramerAlert from "../FramerButton/FramerAlert";
+import Result from "../Result/Result";
 
-export default function SymptomForm({ setFormFilled }) {
+export default function SymptomForm({ setFormFilled, result, setResult }) {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState(null);
-  const [warning, setWarning] = useState(true);
+  // const [result, setResult] = useState(null);
+  const [warning, setWarning] = useState(false);
   const [error, setError] = useState(null);
-  /*
-  
-  Testing result
-    confidence: 0.6096,
-    disease: "Common Cold",
-    symptoms_provided: ["cough", "headache", 'chills"'],
-    unknown_symptoms: ['chills"'],
-  */
 
   const updateSymptom = (symptomValue, value) => {
     console.log("Checkbox Updated:", symptomValue, value);
@@ -55,9 +48,8 @@ export default function SymptomForm({ setFormFilled }) {
 
     try {
       const query = selectedSymptoms.join(",");
-      const response = await fetch(
-        `http://localhost:5000/predict?symptoms=${query}`
-      );
+      const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+      const response = await fetch(`${BACKEND_URL}predict?symptoms=${query}`);
 
       if (!response.ok) {
         throw new Error("Failed to get prediction from server.");
@@ -136,24 +128,12 @@ export default function SymptomForm({ setFormFilled }) {
         </div>
       </div>
     );
-  else if (isLoading) return <div>Loading</div>;
-  else if (result)
+  else if (isLoading)
     return (
-      <div>
-        {result.disease} by {result.confidence * 100} %
-        <button
-          onClick={() => {
-            handleReset();
-          }}
-        >
-          reset
-        </button>
+      <div className={styles.loadingContainer}>
+        <h1>Processing</h1> <span className={styles.loader}></span>{" "}
       </div>
     );
-  else if (warning)
-    return (
-      <AnimatePresence>
-        <FramerAlert setWarning={setWarning} />
-      </AnimatePresence>
-    );
+  else if (result) return <Result result={result} handleReset={handleReset} />;
+  else if (warning) return <FramerAlert setWarning={setWarning} />;
 }

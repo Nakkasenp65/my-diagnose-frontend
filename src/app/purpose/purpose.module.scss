@@ -1,10 +1,15 @@
 @use "/src/util/clr";
 .container {
   width: 100%;
-  height: 100vh;
+  height: 83vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: clr.$text-color;
-  font-size: 128px;
+}
+
+.card {
+  @include clr.defaultCardStyle;
+  padding: 2rem;
+  background: white;
 }

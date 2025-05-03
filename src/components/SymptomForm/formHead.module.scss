@@ -2,8 +2,7 @@
 
 .formHead {
   display: flex;
-  gap: 16px;
-  padding: 32px 0;
+  gap: 1rem;
 
   .formBack {
     @include clr.defaultCardStyle;

@@ -5,7 +5,7 @@ import styles from "./framerButton.module.scss";
 
 export default function FramerButton({ children, onClick, active = false }) {
   return (
-    <motion.button
+    <motion.span
       className={`${styles.btn} ${active ? styles.active : ""}`}
       whileHover={{ y: -4 }}
       whileTap={{ scale: 0.95 }}
@@ -13,6 +13,6 @@ export default function FramerButton({ children, onClick, active = false }) {
       transition={{ type: "spring", stiffness: 300 }}
     >
       {children}
-    </motion.button>
+    </motion.span>
   );
 }

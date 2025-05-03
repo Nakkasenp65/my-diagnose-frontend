@@ -10,22 +10,19 @@
   height: 100%;
   top: 0;
   left: 0;
-  border: 1px solid red;
-  background: blur;
-  backdrop-filter: blur(5px);
+  background: white;
 }
 
 .alert {
-  z-index: 9999;
   background: white;
-  padding: 2rem 5rem;
+  padding: 2rem 4rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  font-size: 20px;
+  font-size: 1.5rem;
   text-align: center;
   @include clr.defaultCardStyle;
 }
