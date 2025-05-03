@@ -8,10 +8,11 @@
   
   COPY . .
   
-  RUN npm run build
-  
   ARG NEXT_PUBLIC_BACKEND_URL
   ENV NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL
+  
+  RUN npm run build
+
   # ---- Run stage ----
   FROM node:18-alpine
   
@@ -20,17 +21,11 @@
   COPY package.json package-lock.json ./
   RUN npm ci --omit=dev
   
-  # Copy built app and config
-  COPY --from=builder /app/public ./public
-  COPY --from=builder /app/.next ./.next
-  COPY --from=builder /app/node_modules ./node_modules
-  COPY --from=builder /app/next.config.mjs ./next.config.mjs
-  COPY --from=builder /app/package.json ./package.json
+  COPY --from=builder /app ./
   
   ENV NODE_ENV production
   ENV PORT 3000
   
   EXPOSE 3000
-  
   CMD ["npm", "start"]
   
