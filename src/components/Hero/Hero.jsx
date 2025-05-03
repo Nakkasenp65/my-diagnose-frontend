@@ -1,6 +1,4 @@
 import styles from "./hero.module.scss";
-import Image from "next/image";
-import doc from "../../../public/images/doc.png";
 
 export default function Hero() {
   return (
