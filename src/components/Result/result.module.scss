@@ -4,19 +4,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
 }
 
 .card {
-  background-color: white;
-  border-radius: 1rem;
-  padding: 3rem 4.5rem;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  width: 100%;
+  padding: 3rem 4.5rem;
   gap: 2rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  border: 6px solid clr.$text-color;
-  box-shadow: 6px 6px clr.$text-color;
+  @include clr.defaultCardStyle(6px);
 }
 
 .cardTop {
@@ -84,6 +81,9 @@
   font-size: 1rem;
   color: #e91e63;
   cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   .heartIcon {
     display: flex;
@@ -92,9 +92,7 @@
 
 .resetButton {
   padding: 0.75rem 1.5rem;
-  border: 2px solid #2c3e50;
   background: none;
-  border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -102,5 +100,48 @@
   &:hover {
     background-color: #2c3e50;
     color: white;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .container {
+    padding: 0;
+  }
+
+  .card {
+    padding: 2.25rem 1.25rem;
+
+    .cardTop {
+      .diseaseName {
+        font-size: 24px;
+        font-weight: normal;
+      }
+
+      .subLabel {
+        font-size: 12px;
+      }
+
+      .confidence {
+        font-size: 14px;
+      }
+
+      .subInfo {
+        font-size: 12px;
+      }
+    }
+
+    .cardMiddle {
+      font-size: 14px;
+
+      .symptoms {
+        font-size: 12px;
+      }
+    }
+
+    .cardBottom {
+      .accurateTag {
+        font-size: 14px;
+      }
+    }
   }
 }

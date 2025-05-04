@@ -12,13 +12,7 @@ export default function Diagnose() {
   const [category, setCategory] = useState("");
   const [formFilled, setFormFilled] = useState(false);
   const [result, setResult] = useState(null);
-  /*
-  Testing result
-    confidence: 0.6096,
-    disease: "Common Cold",
-    symptoms_provided: ["cough", "headache", 'chills"'],
-    unknown_symptoms: ['chills"'],
-  */
+  const [formData, setFormData] = useState({});
 
   return (
     <AnimateIn>
@@ -45,6 +39,8 @@ export default function Diagnose() {
                 setFormFilled={setFormFilled}
                 result={result}
                 setResult={setResult}
+                formData={formData}
+                setFormData={setFormData}
               />
             )}
           </AnimatePresence>

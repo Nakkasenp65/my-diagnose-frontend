@@ -5,6 +5,7 @@ export default function AboutModel() {
     <div className={styles.container}>
       <div className={styles.card}>
         <h1>MODEL BASED ON NAIVE BAYES</h1>
+        <br />
         <p>
           ระบบวิเคราะห์อาการนี้ใช้โมเดล Machine Learning ชนิด Naive Bayes
           ซึ่งเหมาะสำหรับงานจำแนกประเภท โดยอ้างอิงจากทฤษฎีของเบย์ (Bayes'

@@ -12,6 +12,11 @@ const variants = {
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -20 },
   },
+  slideDown: {
+    initial: { opacity: 0, y: -20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 20 },
+  },
   // add more presets with exit states as needed...
 };
 

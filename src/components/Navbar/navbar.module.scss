@@ -1,16 +1,19 @@
 @use "/src/util/clr";
 
-// navbar.module.scss
-
 .nav {
-  // position: relative;
   z-index: 3;
   top: 12px;
   width: 100%;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
+}
+
+.mobileMenuToggle {
+  display: none;
+  cursor: pointer;
+  color: var(--color-primary);
 }
 
 .list {
@@ -32,27 +35,75 @@
   align-items: center;
   justify-content: center;
 
-  // ลิงก์ default
   .link {
-    color: clr.$text-color;
+    color: var(--color-primary);
+    font-size: 24px;
     text-decoration: none;
     transition: color 0.2s;
     padding: 8px 24px;
   }
 
   &:hover .link {
-    color: clr.$blue-button;
+    color: var(--color-accent);
   }
 }
 
-// Style ของ active item (border + shadow + radius)
 .active {
-  background: white;
+  background: #fff;
   @include clr.defaultCardStyle;
 
-  // ลิงก์ข้างในก็เน้นสีเมื่อ active
   .link {
-    color: clr.$text-color;
+    color: var(--color-primary);
     font-weight: 500;
+  }
+}
+
+// ============ Responsive ============
+
+@media (max-width: 768px) {
+  .nav {
+    justify-content: space-between;
+    z-index: 10;
+  }
+
+  .mobileMenuToggle {
+    display: block;
+    z-index: 5;
+  }
+
+  .list {
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    top: 0px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .open {
+    display: flex;
+  }
+
+  .item .link {
+    font-size: 20px;
+    padding: 12px 0px;
+  }
+
+  .item {
+    height: 36px;
+  }
+
+  .active {
+    border: none;
+    box-shadow: none;
+
+    .link {
+      color: var(--color-primary);
+      font-weight: 500;
+    }
   }
 }

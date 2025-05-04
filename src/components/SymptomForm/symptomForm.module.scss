@@ -9,37 +9,6 @@
   background: white;
 }
 
-.stepIndicator {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  // gap: 12px;
-  margin-bottom: 24px;
-}
-
-.step {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-  border-bottom: #f7f7f7 2px solid;
-  // border: 2px solid #2c3e50;
-  // border-radius: 16px;
-  background: #fff;
-  color: #2c3e50;
-  font-weight: bold;
-  text-align: center;
-  transition: background 0.3s, color 0.3s;
-  cursor: pointer;
-}
-
-.step.active {
-  border-bottom: #2c3e50 2px solid;
-}
-
-.pageWrapper {
-  position: relative;
-}
-
 .controls {
   display: flex;
   justify-content: space-between;
@@ -70,7 +39,7 @@
 
 .nextBtn {
   background: #fff;
-  color: clr.$text-color;
+  color: var(--color-primary);
 }
 
 .loadingContainer {
@@ -115,6 +84,40 @@
 
     100% {
       transform: translate(-50%, -100%) scale(0);
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .formContainer {
+    min-width: 320px;
+    padding: 1.25rem 0.75rem;
+    gap: 1.25rem;
+    @include clr.defaultCardStyle(3px, 3px, 10px);
+
+    .controls {
+      button {
+        padding: 14px;
+        font-size: 16px;
+        @include clr.defaultCardStyle(2px, 2px, 10px);
+      }
+    }
+
+    .loadingContainer {
+      h1 {
+        font-size: 14px;
+      }
+    }
+
+    .loader {
+      width: 24px;
+      height: 24px;
+    }
+
+    .loader:before,
+    .loader:after {
+      width: 20px;
+      height: 20px;
     }
   }
 }

@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 import styles from "./category.module.scss";
 import { motion } from "framer-motion";
 
@@ -21,7 +20,6 @@ export default function Category({
         <p className={styles.description}>{cat_description}</p>
         <p className={styles.example}>{cat_example}</p>
       </div>
-      <FaArrowRight className={styles.icon} />
     </motion.div>
   );
 }

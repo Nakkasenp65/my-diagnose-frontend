@@ -1,8 +1,6 @@
 "use server";
 
 export async function GET(req, res) {
-  // req is array of symptoms
-  console.log("CALLED");
   const { searchParams } = new URL(req.url);
   const symptoms = searchParams.get("symptoms");
   const BACKEND_URL = process.env.BACKEND_URL;

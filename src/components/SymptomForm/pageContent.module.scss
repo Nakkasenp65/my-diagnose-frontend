@@ -9,6 +9,11 @@
 }
 
 .pageContent::-webkit-scrollbar {
-  // hide scrollbar
   display: none;
+}
+
+@media only screen and (max-width: 430px) {
+  .pageContent {
+    padding: 4px 0;
+  }
 }

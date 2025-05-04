@@ -1,12 +1,10 @@
-$primary-button: #018547;
-$text-color: #2c3e50;
-$light-text-color: #ffffff;
-$green-hover: #6dbf7e;
-$primary-bg: #ffffff;
-$blue-button: #1f6984;
-
-@mixin defaultCardStyle {
-  border: 4px solid $text-color;
-  box-shadow: 4px 4px $text-color;
-  border-radius: 16px;
+@mixin defaultCardStyle(
+  $border-size: 4px,
+  $shadow-size: 4px,
+  $border-radius: 16px,
+  $border-color: var(--color-primary)
+) {
+  border: $border-size solid $border-color;
+  box-shadow: $shadow-size $shadow-size $border-color;
+  border-radius: $border-radius;
 }

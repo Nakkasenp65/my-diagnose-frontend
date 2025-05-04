@@ -31,8 +31,7 @@ function Result({ result, handleReset }) {
       <div className={styles.container}>
         <div className={styles.card}>
           <div className={styles.cardTop}>
-            <span className={styles.subLabel}>โรคทางเดินหายใจ</span>
-            <h1 className={styles.diseaseName}> 📊 ผลลัพธ์: {disease} </h1>
+            <h1 className={styles.diseaseName}> 📊ผลลัพธ์: {disease} </h1>
             <div className={styles.accuracy}>
               <div className={styles.confidence}>
                 ความแม่นยำ {(confidence * 100).toFixed(2)}%

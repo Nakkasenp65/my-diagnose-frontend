@@ -1,0 +1,64 @@
+@use "/src/util/clr";
+.stepIndicator {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // gap: 12px;
+  margin-bottom: 24px;
+}
+
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-bottom: #f7f7f7 2px solid;
+  background: #fff;
+  color: var(--color-primary);
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.step.active {
+  border-bottom: var(--color-primary) 2px solid;
+}
+
+.mobileStepIndicator {
+  display: none;
+}
+
+@media only screen and (max-width: 430px) {
+  .stepIndicator {
+    display: none;
+  }
+
+  .mobileStepIndicator {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+
+    .dropdownToggle {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0.5rem;
+      @include clr.defaultCardStyle(2px, 2px, 10px);
+    }
+
+    .dropdownList {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      @include clr.defaultCardStyle(2px, 2px, 10px);
+
+      li {
+        list-style: none;
+        padding: 0.5rem;
+      }
+    }
+  }
+}

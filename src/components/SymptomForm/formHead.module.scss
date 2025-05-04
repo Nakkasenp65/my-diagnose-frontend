@@ -1,6 +1,7 @@
 @use "src/util/clr";
 
 .formHead {
+  color: var(--color-primary);
   display: flex;
   gap: 1rem;
 
@@ -15,5 +16,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .formHead {
+    gap: 10px;
+
+    .formBack {
+      @include clr.defaultCardStyle(3px, 3px, 100%);
+      width: 36px;
+      height: 36px;
+      font-size: 20px;
+    }
+
+    h1 {
+      font-size: 26px;
+    }
   }
 }

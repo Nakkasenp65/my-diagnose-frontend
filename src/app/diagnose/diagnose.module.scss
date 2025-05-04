@@ -1,15 +1,14 @@
-@use "/src/util/clr";
 .container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: 3.5rem;
 }
 
 .categories {
   display: grid;
   grid-template-columns: auto;
-  padding: 1rem;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 @media only screen and (max-width: 960px) {
@@ -17,5 +16,15 @@
     display: grid;
     grid-template-columns: auto;
     gap: 16px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .container {
+    gap: 1rem;
+  }
+
+  .categories {
+    padding: 0;
   }
 }

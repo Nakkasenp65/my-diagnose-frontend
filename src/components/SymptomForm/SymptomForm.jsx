@@ -5,34 +5,52 @@ import styles from "./symptomForm.module.scss";
 import PageContent from "./PageContent";
 import FramerAlert from "../FramerButton/FramerAlert";
 import Result from "../Result/Result";
+import StepIndicator from "./StepIndicator";
 
-export default function SymptomForm({ setFormFilled, result, setResult }) {
+export default function SymptomForm({
+  setFormFilled,
+  result,
+  setResult,
+  formData,
+  setFormData,
+}) {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  // const [result, setResult] = useState(null);
   const [warning, setWarning] = useState(false);
   const [error, setError] = useState(null);
 
   const updateSymptom = (symptomValue, value) => {
-    console.log("Checkbox Updated:", symptomValue, value);
     setFormData((prev) => ({
       ...prev,
       [symptomValue]: value,
     }));
   };
 
+  const scrollToTop = () => {
+    document.body.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   const handleNext = () => {
-    if (step < 3) setStep((s) => s + 1);
-    else handleSubmit();
+    if (step < 3) {
+      setStep((s) => s + 1);
+      scrollToTop();
+    } else handleSubmit();
   };
 
   const handleBack = () => {
-    if (step > 1) setStep((s) => s - 1);
+    if (step > 1) {
+      setStep((s) => s - 1);
+      scrollToTop();
+    }
   };
 
   async function handleSubmit() {
     setIsLoading(true);
+    scrollToTop();
     setError(null);
     // Convert formData to a query string (formdata contain symptomName: true/false/0/1)
     const selectedSymptoms = Object.entries(formData)
@@ -48,14 +66,13 @@ export default function SymptomForm({ setFormFilled, result, setResult }) {
 
     try {
       const query = selectedSymptoms.join(",");
-      const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+      // const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
       // const response = await fetch(`${BACKEND_URL}predict?symptoms=${query}`);
 
       const response = await fetch(`/predict?symptoms=${query}`);
       if (!response.ok) {
         throw new Error("Failed to get prediction from server.");
       }
-      console.log("CALLED FROM FRONTEND");
 
       // Optional: simulate loading delay
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -81,23 +98,7 @@ export default function SymptomForm({ setFormFilled, result, setResult }) {
   if ((result === null && isLoading === false && warning === false) || error)
     return (
       <div className={styles.formContainer}>
-        {/* Step Indicator */}
-        <div className={styles.stepIndicator}>
-          {["อาการเบื้องต้น", "อาการเพิ่มเติม", "อาการที่อาจพบได้"].map(
-            (n, index) => (
-              <div
-                key={n}
-                className={`${styles.step} ${
-                  step === index + 1 ? styles.active : ""
-                }`}
-                // เปลี่ยนหน้าเมื่อคลิก
-                onClick={() => setStep(index + 1)}
-              >
-                {n}
-              </div>
-            )
-          )}
-        </div>
+        <StepIndicator step={step} setStep={setStep} />
         {/* Content */}
         <AnimatePresence mode="wait">
           <motion.div
