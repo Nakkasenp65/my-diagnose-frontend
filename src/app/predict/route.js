@@ -1,4 +1,4 @@
-// Remove "use server" - not needed for route handlers
+"use server";
 export async function GET(req) {
   try {
     const { searchParams } = new URL(req.url);
